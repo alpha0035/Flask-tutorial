@@ -20,7 +20,7 @@ from flask import Flask
   
 app = Flask(__name__) 
 
-print('1.Example\n2.Dynamic URLs\n3.Convert variable\n4.add_url_rule() function')
+print('1.Example\n2.Dynamic URLs\n3.Convert variable\n4.add_url_rule() function\n')
 
 i = int(input("Enter your choice: "))
 
@@ -39,20 +39,18 @@ match i:
         if __name__ == "__main__": 
             app.run() 
 
+        # try: http://127.0.0.1:5000 and http://127.0.0.1:5000/hello
+
     case 2:
         @app.route('/user/<username>') 
         def show_user(username): 
             # Greet the user 
             return f'Hello {username} !'
 
-        @app.route("/") 
-        def index(): 
-            return "Homepage of GeeksForGeeks"
-
         if __name__ == "__main__": 
             app.run()
         
-        # try: http://127.0.0.1:5000 and http://127.0.0.1:5000/user/alpha
+        # try: http://127.0.0.1:5000/user/alpha
 
     case 3:
         @app.route('/post/<int:id>') 
